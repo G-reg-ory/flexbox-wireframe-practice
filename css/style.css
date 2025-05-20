@@ -1,7 +1,7 @@
-html {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
 }
 .container {
   display: flex;
@@ -11,8 +11,8 @@ html {
   color: white;
   text-align: center;
   padding: 30px;
-  min-width: 300px;
   font-family: sans-serif;
+  flex-wrap: wrap;
 }
 
 .header {
@@ -36,6 +36,7 @@ html {
   margin: 5px;
   border-radius: 10px;
   padding: 10px 5px 10px 5px;
+  flex-wrap: wrap;
 }
 
 .article {
@@ -64,4 +65,47 @@ html {
   margin: 5px;
   border-radius: 10px;
   font-size: 30px;
+}
+@media (min-width: 1280px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .header, .footer {
+        width: grow;
+        text-align: center;
+    }
+
+    .aside {
+        display: flex;
+        width: 9em;
+        height: 10em;
+        flex: grow;
+    }
+    .container {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .article-container {
+        display: flex;
+        width: 55em;
+        height: 20em;
+        flex-direction: column; /* Ensures articles stack */
+    }
+    .article {
+        display: flex;
+        height: 3em;
+        text-align: center;
+    }
 }
